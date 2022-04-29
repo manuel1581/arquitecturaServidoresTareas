@@ -1,0 +1,30 @@
+{
+  "name": "arquitecturaservidorestareas",
+  "version": "1.0.0",
+  "description": "tareas arquitectura de servidores",
+  "main": "actividad1.js",
+  "scripts": {
+    "test":  "jest",
+    "start": "node actividad1.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manuel1581/arquitecturaServidoresTareas.git"
+  },
+  "keywords": [
+    "tarea"
+  ],
+  "author": "Manuel Martinez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manuel1581/arquitecturaServidoresTareas/issues"
+  },
+  "homepage": "https://github.com/manuel1581/arquitecturaServidoresTareas#readme",
+  "dependencies": {
+    "express": "^4.18.0"
+  },
+  "devDependencies": {
+    "jest": "^28.0.2",
+    "supertest": "^6.2.3"
+  }
+}
