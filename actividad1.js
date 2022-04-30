@@ -2,7 +2,7 @@
 
 const app = require("./app")
 
-app.listen(8080, () => {
+app.listen(8000, () => {
 
     console.log("listo!");
 
