@@ -1,0 +1,98 @@
+
+
+APIs Restful
+CRUD
+create-read-update-delete
+
+
+MVC
+Modelo Vista Controlador
+
+Example of RestAPI
+
+List cats-  GET/cats => 200 (ok) []. 401/403
+Create cat- POST/cats => 201(created) 401/403 | Bad request.
+Cat detail- GET/cats/<id> => 200(ok) | {}. 401/403 | 404 Not Found.
+Update Cat  PATCH/cats/<id> | {name: "xx"} => 200 (ok)
+update Cat  PUT/cats/<id>   | {name: "xx", color: "...", .., owner" ""} => 200 (ok)
+-------difference between patch and put is that path is only one element and put is the whole record
+Delete cat DELETE/cats/<id> => 204 (no content)
+
+
+
+
+
+Crear proyecto y librerias
+------------------------------
+
+npm init
+npm i express mongoose mongodb-memory-server morgan dotenv
+npm i --save-dev nodemon (en develop porque no lo queremos en produccion)
+npm install bcrypt
+npm install jsonwebtoken
+
+
+(mongoose es la capa de modelo, permite modelas la capa de base de datos)
+(logs en express con morga)
+(dotenv nos ayuda a gestionar variables de entorno en nuestro programa)
+
+
+
+
+Directorios:
+
+bin -contiene ejecutables
+config -configuraciond de la confg a la base de datos.
+controllers -programaremos nuestros controles dentro de nuestro modelo MVC.
+middleware -express basado en el uso de middlewares
+modelos -para poner nuestros modelos.
+.env -para crear nuesetras variables de entorno y lo que se pone ahi es secreto.
+.env.template -es un archivo con las varialbes sin valores para que otro programador pueda poner ahi sus propios valores de entorno.
+
+
+
+Cuando dicen modelo, es realmente una tabla de base de datos.
+Controlador es como se maneja los queries dependiendo del request.
+Vista es mostrarlas.
+
+
+-----------------------------------------------------------------
+
+Autenticacion
+
+Se creara un modelo nuevo para el usuario y password.
+
+
+El usuario envia:
+    email, password,...,data
+
+El servidor encripta el password y GUARDA EL PASSWORD ENCRIPTADO.
+El codigo que encripta el password se hace justo al momento de crear el usuario 
+    y esto es responsabilidad del modelo. Por eso se programa en la parte de modelo.
+
+
+El login compara el password que envia el cliente contra el de la base de datos.
+usaremos la autenticacion basada en tokens.
+
+
+usaremos una logica para ver si se tiene el token correcto
+utilizaremos funciones o middlewares para proteger los posts solamente a usuario identificados.
+
+
+
+en resumen:
+    -los passwords se encriptan y guardan en una bd.
+    -el encriptado es salt (password+salt), para que sea mas dificil por si se roban la base de datos
+    -cuando el usuario quiere entrar de nuev, pone su password, se encripta y se compara contra el password encriptado.
+
+    -confrimado el password, se crea un token en base a una llave ultra secreta que esta como una variable de ambiente en el servidor.
+    -el token se envia, tiene caducidad y se usa para hacer los movimientos que lo necesiten.
+
+
+
+
+
+
+
+
+
