@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "47b2845b-927b-4faf-9727-cb86d28f550b",
+		"name": "arqSer_tarea2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get_posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8009/api/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8009",
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_post",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8009/api/posts/6276ba108db29bbf2f134088",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8009",
+					"path": [
+						"api",
+						"posts",
+						"6276ba108db29bbf2f134088"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post_posts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"title\": \"Las pato aventuras de Manuel\", \r\n    \"text\": \"Este es un texto de prueba muy chingon\", \r\n    \"author\":\"Manuel Martinez Casas\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8009/api/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8009",
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post_posts Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"title\": \"f\", \r\n    \"text\": \"11\", \r\n    \"author\":\"123\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8008/api/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8008",
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "patch_updatePost",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Las ultimas pato aventuras de Manuel\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8009/api/posts/6276ba108db29bbf2f134089",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8009",
+					"path": [
+						"api",
+						"posts",
+						"6276ba108db29bbf2f134089"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_deletePost",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8009/api/posts/6276ba168db29bbf2f13408b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8009",
+					"path": [
+						"api",
+						"posts",
+						"6276ba168db29bbf2f13408b"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

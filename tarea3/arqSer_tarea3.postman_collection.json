@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "c342cfde-b540-4371-96c1-50ba9819fed3",
+		"name": "arqSer_tarea3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create_user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"name\": \"Manuel Mtz Casas\", \r\n    \"email\": \"manuel@martinezcasas.com\", \r\n    \"password\":\"123456789\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"name\": \"Manuel Mtz Casas\", \r\n    \"email\": \"manuel@martinezcasas.com\", \r\n    \"password\":\"123456789\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_posts_wAuth",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTIwNDk5MzcsInN1YiI6IjYyNzgzOWZhZTM1YWIyYzA4MjQyODY2OSIsImlhdCI6MTY1MjA0NjMzN30.I6pWaBYdw0qv1AIQDwuvH_MgNYJDhWKUWPOp3q1WKao",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "patch_updatePost_wAuth",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTIwNDk5MzcsInN1YiI6IjYyNzgzOWZhZTM1YWIyYzA4MjQyODY2OSIsImlhdCI6MTY1MjA0NjMzN30.I6pWaBYdw0qv1AIQDwuvH_MgNYJDhWKUWPOp3q1WKao",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Las ultimas pato aventuras de Manuel\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/posts/62783ab9e35ab2c08242866d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts",
+						"62783ab9e35ab2c08242866d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post_posts_wAuth",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTIwNDk5MzcsInN1YiI6IjYyNzgzOWZhZTM1YWIyYzA4MjQyODY2OSIsImlhdCI6MTY1MjA0NjMzN30.I6pWaBYdw0qv1AIQDwuvH_MgNYJDhWKUWPOp3q1WKao",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"title\": \"Las otras pato aventuras de Manuel\", \r\n    \"text\": \"Este es un texto de prueba muy chingon\", \r\n    \"author\":\"Manuel Martinez Casas\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
